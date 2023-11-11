@@ -1,0 +1,3 @@
+# Razor-lang
+
+This is the [razor language](https://www.cambridge.org/core/journals/journal-of-functional-programming/article/programming-language-semantics-its-easy-as-123/EC2C046CF94382B3B408036B84475DC7) implemented in rust following the [pest parsers tutorial](https://pest.rs/book/) and a course notes on [typesystems of programming languages](https://bitbucket.org/akaposi/typesystems/src/master/)
