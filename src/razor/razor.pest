@@ -1,0 +1,26 @@
+// A program is some number of terms, we dont allow the empty program
+program = _{ SOI ~ term+ ~ EOI }
+
+term = _{ IfThenElse | Y }
+
+IfThenElse = { "if" ~ Y ~ "then" ~ Y ~  "else" ~ Y }
+
+Y = _{ Plus | Z }
+
+Plus = { Z ~ ("+" ~ Z )+ }
+
+Z = _{ isZero | atom }
+
+isZero = { "isZero" ~ atom }
+
+atom = _{ true | false | num | "(" ~ term ~ ")" }
+
+num = ${ "num " ~ number }
+true = @{ "true" }
+false = @{ "false" }
+
+// Matches all whole numbers : 0, 1, 2, ..., 100, ...
+number = @{ ASCII_NONZERO_DIGIT ~ ASCII_DIGIT+ | ASCII_DIGIT }   // A whole number is either a single digit from 0-9
+                                                            // or a nonzero digit followed by some number of digits
+
+WHITESPACE = _{ " " | "\t" | "\r" | "\n" }

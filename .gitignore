@@ -1,0 +1,8 @@
+*.pdf
+.vscode
+target/
+data.json
+
+src/lambda/
+src/json/
+src/repl/
